@@ -170,7 +170,7 @@ def build_report_html(results: dict, json_filename: str) -> str:
 <section class="card">
   <h2 class="small">Resumen</h2>
   <p class="small">Total puertos listados: <strong>{len(rows)}</strong></p>
-  <canvas id="stateChart" style="max-width:700px;height:280px"></canvas>
+  <canvas id="stateChart" style="width:100%;max-width:400px;height:180px;margin:auto;display:block"></canvas>
 </section>
 
 <section class="card">
