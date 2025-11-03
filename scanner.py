@@ -278,8 +278,27 @@ def interactive_flow():
 
 def main():
     args = parse_args()
+
+    # Si se pidio solo generar el reporte se le da prioridad antes que a todo.
+    if args.report:
+        json_path = args.out
+        if not json_path:
+            print(Fore.RED + "Debe especificar un archivo JSON con --out para generar el reporte.")
+            sys.exit(1)
+
+        if not os.path.exists(json_path):
+            print(Fore.RED + f"No se encontró el archivo {json_path}.")
+            sys.exit(1)
+
+        try:
+            out_html = generate_report_from_json(json_path)
+            print(Fore.GREEN + f"✅ Informe generado: {out_html}")
+        except Exception as e:
+            print(Fore.RED + f"Error generando informe: {e}")
+        return
+    
     # Si no hay argumentos, se inicia el modo interactivo
-    if not args.target or not args.ports or not args.out:
+    if not args.target or not args.ports:
         interactive_flow()
         return
 
