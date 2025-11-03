@@ -32,33 +32,47 @@ Ejcuta el programa sin darle argumentos y sigue las instrucciones en pantalla.
 **Ejemplo:**
 python scanner_full.py
 === Escáner de Puertos (modo interactivo) ===
+
 Introduce la dirección IP o dominio a escanear: 192.168.1.34
+
 Introduce el rango/lista de puertos (ej. 20-1024 o 22,80,443): 20-1024
+
 ¿Deseas guardar los resultados en JSON? (s/n): s
+
 💾 Resultados guardados en scan_results_192_168_1_34.json
+
 Puedes generar un informe HTML con:
+
   python scanner_full.py --report --out scan_results_192_168_1_34.json
+
+---
 
 ## 2. Modo no interactivo (CLI)
 Escaneo directo con argumentos:
 
-**Ejemplo:**
 **Escaneo y guardado JSON**
+
 python scanner_full.py --target 192.168.1.34 --ports 22,80,443 --save
 
 **Escaneo, guardado y generación de informe HTML**
+
 python scanner_full.py -t 192.168.1.34 -p 20-1024 -s -r
 
 **Si ya tienes un JSON previo, puedes solo generar el informe**
+
 python scanner_full.py --report --out scan_results_192_168_1_34.json
 
-## Conocimientos aplicads
+---
+
+## Conocimientos aplicados
 
 * Python intermedio (CLI, validación, JSON, HTML).
 * Uso de librerías: nmap, argparse, colorama.
 * Conceptos básicos de ciberseguridad y redes TCP/IP.
 * Buenas prácticas de documentación y legibilidad.
 * Automatización y exportación de resultados.
+
+---
 
 ## ⚠ Ética y responsabilidad
 
