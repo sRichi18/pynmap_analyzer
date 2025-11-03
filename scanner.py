@@ -279,7 +279,7 @@ def interactive_flow():
 def main():
     args = parse_args()
     # Si no hay argumentos, se inicia el modo interactivo
-    if not args.target or not args.ports:
+    if not args.target or not args.ports or not args.out:
         interactive_flow()
         return
 
